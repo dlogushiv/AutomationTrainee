@@ -3,6 +3,15 @@
 a = [1, 2, 3, 4, 5, 6]
 # b = [4, 5, 6, 7, 8, 9]
 b = [2, 4, 6, 8]
+# a = [2, 2, 2, 2, 2, 2, 2, 2]
+# b = [1, 1, 1, 1]
 
-result = list(set(a).difference(set(b)))
+result = []
+for el in a:
+    if el not in b:
+        result.append(el)
 print(result)
+
+
+
+# result = list(set(a).difference(set(b)))
