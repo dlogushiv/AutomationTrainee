@@ -5,8 +5,13 @@ from OOP.Figures.Figure import Figure
 
 class IsoscelesTriangle(Figure):
     def __init__(self, side, base):
-        self.side = side
-        self.base = base
+        if base <= 2 * side:
+            self.side = side
+            self.base = base
+            self.created = True
+        else:
+            self.created = False
+            print('Impossible to create new triangle. Check the sides values.')
 
     def perimeter(self):
         if self.created:
