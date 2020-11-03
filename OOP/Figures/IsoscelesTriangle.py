@@ -9,7 +9,13 @@ class IsoscelesTriangle(Figure):
         self.base = base
 
     def perimeter(self):
-        return 2 * self.side + self.base
+        if self.created:
+            return 2 * self.side + self.base
+        else:
+            return 0
 
     def square(self):
-        return 0.25 * self.base * sqrt(4 * self.side ** 2 - self.base ** 2)
+        if self.created:
+            return 0.25 * self.base * sqrt(4 * self.side ** 2 - self.base ** 2)
+        else:
+            return 0
