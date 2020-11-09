@@ -1,10 +1,12 @@
 # 10 Циклический сдвиг элементов массива на k- позиций вправо.
 import time
 
-a = [0, 1, 2, 3, 4, 5]
-k = 2
-# a = list(range(10000000))
-# k = 1000000
+# a = [0, 1, 2, 3, 4, 5]
+# b = [0, 1, 2, 3, 4, 5]
+# k = 2
+a = list(range(100000))
+b = list(range(100000))
+k = 10000
 
 # циклический сдвиг на 1 элемент k-итераций -- большое время выполнения на большом количестве элементов и шаге
 # start =time.time()
@@ -22,7 +24,7 @@ k = 2
 # print()
 
 # сдвиг сразу на k элементов с заменой первых k элементов на последние k -- быстрота выполнения
-# start = time.time()
+start = time.time()
 j = 0
 tmp = [0] * k
 for i in range(len(a) - k, len(a)):
@@ -32,15 +34,25 @@ for i in range(len(a) - 1, -1 + k, -1):
     a[i] = a[i - k]
 for i in range(len(tmp)):
     a[i] = tmp[i]
-print(a)
-# print(time.time() - start)
+# print(a)
+print(time.time() - start)
+
+# вариант Богдана - время выполнения сильно зависит от k
+start=time.time()
+i=0
+while i<k:
+    tm=b.pop(-1)
+    b.insert(0,tm)
+    i+=1
+# print(b)
+print(time.time() - start)
 
 # подсказка от жены с применением срезов
-# start = time.time()
-# tmp = a[len(a) - k:]
-# for i in range(len(a) - 1, 0, -1):
-#     a[i] = a[i - k]
-# a[0:k] = tmp
-# stop = time.time()
+start = time.time()
+tmp = a[len(a) - k:]
+for i in range(len(a) - 1, 0, -1):
+    a[i] = a[i - k]
+a[0:k] = tmp
+stop = time.time()
 # print('Result: ', *a)
-# print(stop - start)
+print(stop - start)
