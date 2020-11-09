@@ -10,7 +10,7 @@ def check_inputs(a, b):
     elif a.isdigit() or b.isdigit():
         print('Inputs have different types.')
     else:
-        if a.find(b) != -1:
+        if a.find(b) != -1:  # if b in a
             print('Line "' + a + '" contain line "' + b + '".')
         else:
             print('Line "' + a + '" doesn\'t contain line "' + b + '".')
