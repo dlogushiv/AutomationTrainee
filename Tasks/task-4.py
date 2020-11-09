@@ -7,9 +7,8 @@
 
 def leap_year(a, b, c):
     result = []
-    years = list(range(a, b + 1))
-    for year in years:
-        if year % 4 == 0 and year not in c:
+    for year in range(a, b + 1):
+        if year % 4 == 0 and year not in c and (year % 400 == 0 or not year % 100 == 0):
             result.append(year)
     return result
 
