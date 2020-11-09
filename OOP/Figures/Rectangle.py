@@ -2,7 +2,8 @@ from OOP.Figures.Figure import Figure
 
 
 class Rectangle(Figure):
-    def __init__(self, width, height):
+    def __init__(self, name, colour, width, height):
+        super().__init__(name, colour)
         self.width = width
         self.height = height
 

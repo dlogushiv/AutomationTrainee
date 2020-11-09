@@ -1,14 +1,7 @@
-from math import sqrt
-
-from OOP.Figures.Figure import Figure
+from OOP.Figures.Triangle import Triangle
 
 
-class EquilateralTriangle(Figure):
-    def __init__(self, side):
+class EquilateralTriangle(Triangle):
+    def __init__(self, name, colour, side):
+        super().__init__(name, colour, a=side, b=side, c=side)
         self.side = side
-
-    def perimeter(self):
-        return 3 * self.side
-
-    def square(self):
-        return self.side * self.side * sqrt(3) * 0.25

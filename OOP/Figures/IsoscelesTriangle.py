@@ -1,10 +1,9 @@
-from math import sqrt
-
-from OOP.Figures.Figure import Figure
+from OOP.Figures.Triangle import Triangle
 
 
-class IsoscelesTriangle(Figure):
-    def __init__(self, side, base):
+class IsoscelesTriangle(Triangle):
+    def __init__(self, name, colour, side, base):
+        super().__init__(name, colour, a=side, b=side, c=base)
         if base <= 2 * side:
             self.side = side
             self.base = base
@@ -12,15 +11,3 @@ class IsoscelesTriangle(Figure):
         else:
             self.created = False
             print('Impossible to create new triangle. Check the sides values.')
-
-    def perimeter(self):
-        if self.created:
-            return 2 * self.side + self.base
-        else:
-            return 0
-
-    def square(self):
-        if self.created:
-            return 0.25 * self.base * sqrt(4 * self.side ** 2 - self.base ** 2)
-        else:
-            return 0

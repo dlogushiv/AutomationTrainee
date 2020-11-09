@@ -4,7 +4,8 @@ from OOP.Figures.Figure import Figure
 
 
 class Triangle(Figure):
-    def __init__(self, a, b, c):
+    def __init__(self, name, colour, a, b, c):
+        super().__init__(name, colour)
         sides = [a, b, c]
         m = max(sides)
         sides.pop(sides.index(m))
@@ -12,9 +13,9 @@ class Triangle(Figure):
             self.a = a
             self.b = b
             self.c = c
-            self.created=True
+            self.created = True
         else:
-            self.created=False
+            self.created = False
             print('Impossible to create new triangle. Check the sides values.')
 
     def perimeter(self):

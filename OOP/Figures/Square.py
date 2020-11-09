@@ -1,12 +1,7 @@
-from OOP.Figures.Figure import Figure
+from OOP.Figures.Rectangle import Rectangle
 
 
-class Square(Figure):
-    def __init__(self, side):
+class Square(Rectangle):
+    def __init__(self, name, colour, side):
+        super().__init__(name, colour, height=side, width=side)
         self.side = side
-
-    def perimeter(self):
-        return 4 * self.side
-
-    def square(self):
-        return self.side ** 2

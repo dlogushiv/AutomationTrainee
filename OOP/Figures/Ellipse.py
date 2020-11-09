@@ -3,7 +3,8 @@ from math import pi, sqrt
 
 
 class Ellipse(Figure):
-    def __init__(self, width, height):
+    def __init__(self, name, colour, width, height):
+        super().__init__(name, colour)
         self.width = width
         self.height = height
 
