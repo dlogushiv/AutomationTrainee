@@ -4,18 +4,19 @@
 # •	если переменные разного типа, вывести сообщение об ошибке (любое)
 
 def check_inputs(a, b):
-    if a.isnumeric() and b.isnumeric():
+    if type(a) is int and type(b) is int:
         print('Inputs are Integer. Max is: ', end='')
-        print(a) if int(a) >= int(b) else print(b)
-    elif a.isdigit() or b.isdigit():
-        print('Inputs have different types.')
-    else:
-        if a.find(b) != -1:  # if b in a
+        print(a if a >= b else b)
+    elif type(a) is str and type(b) is str:
+        if b in a:
             print('Line "' + a + '" contain line "' + b + '".')
         else:
             print('Line "' + a + '" doesn\'t contain line "' + b + '".')
+    else:
+        print('Inputs have different types.')
 
 
-x = input()
-y = input()
-check_inputs(x, y)
+check_inputs(5, 10)
+check_inputs(5, 'aaa')
+check_inputs('qwerty', 'wer')
+check_inputs('qwerty', 'bnv')
