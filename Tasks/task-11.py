@@ -6,12 +6,11 @@ b = [2, 4, 6, 8]
 # a = [2, 2, 2, 2, 2, 2, 2, 2]
 # b = [1, 1, 1, 1]
 
-result = []
-for el in a:
-    if el not in b:
-        result.append(el)
-print(result)
+# result = []
+# for el in a:
+#     if el not in b:
+#         result.append(el)
+# print(result)
 
-
-
-# result = list(set(a).difference(set(b)))
+res = [i for i in a if i not in b]
+print(res)
