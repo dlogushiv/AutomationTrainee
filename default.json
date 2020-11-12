@@ -1,0 +1,20 @@
+[
+    {
+        "section": {
+            "fields": [
+                {
+                    "default": "DEBUG",
+                    "description": "loggerlevel",
+                    "label": "User log level",
+                    "name": "loggerlevel",
+                    "options": [
+                        "DEBUG",
+                        "INFO"
+                    ],
+                    "type": "dropbox"
+                }
+            ],
+            "title": "Logger"
+        }
+    }
+]
